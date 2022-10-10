@@ -2,6 +2,8 @@ import {
   Model, INTEGER, STRING, DOUBLE
 } from 'sequelize';
 import db from '.';
+import Rents from './rents';
+import Users from './usersModel';
 
 class Products extends Model {
   id!: number;
@@ -40,5 +42,13 @@ Products.init({
   modelName: 'products',
   timestamps: false,
 });
+
+Users.belongsToMany(Products, {
+  through: Rents,
+})
+
+Products.belongsToMany(Users, {
+  through: Rents,
+})
 
 export default Products;

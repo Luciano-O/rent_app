@@ -29,7 +29,7 @@ describe("Testes da rota /products", () => {
 
       expect(status).to.be.equal(StatusCodes.OK)
       expect(body).to.be.an('array');
-      expect(body).to.be.equal(products)
+      expect(body.length).to.be.equal(2)
     })
   })
 })
