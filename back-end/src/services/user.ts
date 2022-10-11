@@ -1,4 +1,6 @@
-import { formatProducts } from '../utils';
+import { formatProducts, generateJWT } from '../utils';
+import * as bcrypt from 'bcryptjs'
+import seq from '../database/models';
 import Products from '../database/models/productsModel';
 import Users from "../database/models/usersModel";
 import IUser from '../interfaces/IUser';
@@ -18,6 +20,20 @@ export default class UsersService {
     }
 
     return finalUser
+  }
+
+  static async create(user: Users) {
+    const hash = bcrypt.hashSync(user.password, 10)
+
+    const { id } = await Users.create({
+      name: user.name,
+      email: user.email,
+      password: hash
+    })
+
+    const token = generateJWT(id, user.email, user.name)
+
+    return token
   }
 }
 

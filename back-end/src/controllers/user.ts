@@ -7,9 +7,13 @@ export default class UsersController {
     const { id } = req.params;
     const user = await UsersService.getById(Number(id))
 
-    console.log(user);
-    
-
     res.status(StatusCodes.OK).json(user)
+  }
+
+  async create(req: Request, res: Response) {
+    const user = req.body;
+    const token = await UsersService.create(user)
+
+    res.status(StatusCodes.OK).json({token})
   }
 }
