@@ -12,3 +12,13 @@ export const products = [
     image: "https://http2.mlstatic.com/D_NQ_NP_916036-MLA46082192810_052021-O.jpg"
   }
 ]
+
+export const user = {
+  name: "Admin",
+  email: "admin@admin.com",
+  rents: [
+    {
+      
+    }
+  ]
+}
