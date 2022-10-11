@@ -1,6 +1,7 @@
 import * as express from 'express';
 import errorMiddleware from './middlewares/ErrorMiddleware';
 import productsRouter from './routes/products';
+import rentsRouter from './routes/rents';
 import usersRouter from './routes/users';
 
 class App {
@@ -25,6 +26,7 @@ class App {
     this.app.use(accessControl);
     this.app.use(productsRouter);
     this.app.use(usersRouter);
+    this.app.use(rentsRouter);
     this.app.use(errorMiddleware);
   }
 

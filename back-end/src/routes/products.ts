@@ -4,8 +4,8 @@ import ProductsController from '../controllers/product';
 
 const productsRouter = Router();
 
-const products = new ProductsController()
+const products = new ProductsController();
 
-productsRouter.get('/products', products.getAll)
+productsRouter.get('/products', products.getAll);
 
 export default productsRouter;

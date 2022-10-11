@@ -6,9 +6,9 @@ import db from '.';
 class Rents extends Model {
   userId!: number;
 
-  stockId!: number;
+  productId!: number;
 
-  quantity!: number;
+  months!: number;
 }
 
 Rents.init({
