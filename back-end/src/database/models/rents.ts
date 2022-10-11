@@ -26,7 +26,7 @@ Rents.init({
     type: INTEGER,
     allowNull: false,
     primaryKey: true,
-    field: "products_id",
+    field: "product_id",
     references: {
       model: 'products',
       key: 'id',
