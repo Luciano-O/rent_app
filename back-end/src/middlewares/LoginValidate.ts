@@ -3,12 +3,11 @@ import { StatusCodes } from 'http-status-codes';
 import * as Joi from 'joi';
 import HttpException from '../shared/http.exception';
 
-export const newUserValidate = (req: Request, res: Response, next: NextFunction) => {
+export const loginValidate = (req: Request, res: Response, next: NextFunction) => {
   const infos = req.body
   const newUserSchema = Joi.object({
     email: Joi.string().email().required(),
     password: Joi.string().min(5).required(),
-    name: Joi.string().min(5).required(),
   })
 
   const test = newUserSchema.validate(infos);

@@ -1,4 +1,5 @@
 import * as express from 'express';
+import errorMiddleware from './middlewares/ErrorMiddleware';
 import productsRouter from './routes/products';
 import usersRouter from './routes/users';
 
@@ -24,6 +25,7 @@ class App {
     this.app.use(accessControl);
     this.app.use(productsRouter);
     this.app.use(usersRouter);
+    this.app.use(errorMiddleware);
   }
 
   public start(PORT: string | number):void {

@@ -1,9 +1,10 @@
 import { formatProducts, generateJWT } from '../utils';
 import * as bcrypt from 'bcryptjs'
-import seq from '../database/models';
 import Products from '../database/models/productsModel';
 import Users from "../database/models/usersModel";
 import IUser from '../interfaces/IUser';
+import HttpException from '../shared/http.exception';
+import { StatusCodes } from 'http-status-codes';
 
 export default class UsersService {
   static async getById(id: number) {
@@ -32,6 +33,17 @@ export default class UsersService {
     })
 
     const token = generateJWT(id, user.email, user.name)
+
+    return token
+  }
+
+  static async login(user: Users) {
+    const atualUser = await Users.findOne({where: { email: user.email}}) as Users
+    const compare = bcrypt.compareSync(user.password, atualUser.password)
+
+    if(compare === false) throw new HttpException(StatusCodes.BAD_REQUEST, "Wrong password")
+
+    const token = generateJWT(atualUser.id, atualUser.email, atualUser.name)
 
     return token
   }
