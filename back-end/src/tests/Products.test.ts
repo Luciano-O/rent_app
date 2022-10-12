@@ -23,7 +23,7 @@ describe("Testes da rota /products", () => {
       (Products.findAll as sinon.SinonStub).restore();
     })
 
-    it('Status e body estão incorretos', async () => {
+    it('Status e body estão corretos', async () => {
       const { status, body } = await chai.request(app)
         .get('/products')
 
