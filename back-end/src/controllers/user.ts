@@ -14,7 +14,7 @@ export default class UsersController {
     const user = req.body;
     const token = await UsersService.create(user)
 
-    res.status(StatusCodes.OK).json({token})
+    res.status(StatusCodes.CREATED).json({token})
   }
 
   async login(req: Request, res: Response) {

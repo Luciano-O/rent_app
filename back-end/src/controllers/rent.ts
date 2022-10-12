@@ -7,7 +7,7 @@ class RentsController {
     const rent = req.body;
     await RentsService.create(rent)
 
-    return res.status(StatusCodes.OK).json({message: "OK!"})
+    return res.status(StatusCodes.CREATED).json({message: "OK!"})
   }
 }
 

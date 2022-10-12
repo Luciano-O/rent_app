@@ -7,7 +7,8 @@
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "dev": "nodemon --watch \"./src/**\" ./src/server.ts",
     "test": "mocha -r ts-node/register ./src/tests/*$NAME*.{test,spec}.ts -t 10000 --exit",
-    "build": "tsc"
+    "build": "tsc",
+    "coverage": "nyc npm run test"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",

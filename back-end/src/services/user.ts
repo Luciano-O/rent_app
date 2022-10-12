@@ -39,6 +39,9 @@ export default class UsersService {
 
   static async login(user: Users) {
     const atualUser = await Users.findOne({where: { email: user.email}}) as Users
+
+    if(!atualUser) throw new HttpException(StatusCodes.BAD_REQUEST, "User don't exists")
+
     const compare = bcrypt.compareSync(user.password, atualUser.password)
 
     if(compare === false) throw new HttpException(StatusCodes.BAD_REQUEST, "Wrong password")
