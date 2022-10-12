@@ -2,13 +2,20 @@ import * as express from 'express';
 import errorMiddleware from './middlewares/ErrorMiddleware';
 import productsRouter from './routes/products';
 import rentsRouter from './routes/rents';
+import * as swaggerJsDoc from 'swagger-jsdoc';
+import * as swaggerUi from 'swagger-ui-express';
 import usersRouter from './routes/users';
+import swaggerConfig from './docs/swagger.config';
 
 class App {
   public app: express.Express;
 
+  public swaggerDoc: any
+
   constructor() {
     this.app = express();
+
+    this.swaggerDoc = swaggerJsDoc(swaggerConfig)
 
     this.config();
 
@@ -23,6 +30,7 @@ class App {
     };
 
     this.app.use(express.json());
+    this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(this.swaggerDoc))
     this.app.use(accessControl);
     this.app.use(productsRouter);
     this.app.use(usersRouter);
