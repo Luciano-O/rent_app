@@ -1,5 +1,3 @@
-import { x } from "joi"
-
 export const products = [
   {
     name: "iPhone 13",

@@ -21,7 +21,7 @@ const swaggerConfig = {
       },
     },
   },
-  apis: ['./dist/routes/*.js'],
+  apis: ['./build/routes/*.js'],
 };
 
 export default swaggerConfig;

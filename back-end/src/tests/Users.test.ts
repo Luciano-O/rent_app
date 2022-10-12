@@ -96,7 +96,7 @@ describe("Testes da rota /users", () => {
         .post('/login')
         .send(notUserLogin)
 
-      expect(status).to.be.equal(StatusCodes.BAD_REQUEST);
+      expect(status).to.be.equal(StatusCodes.NOT_FOUND);
       expect(body).to.contain({message: "User don't exists"})
     })
 
