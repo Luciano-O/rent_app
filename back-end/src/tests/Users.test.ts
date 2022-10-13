@@ -97,7 +97,7 @@ describe("Testes da rota /users", () => {
         .send(notUserLogin)
 
       expect(status).to.be.equal(StatusCodes.NOT_FOUND);
-      expect(body).to.contain({message: "User don't exists"})
+      expect(body).to.contain({message: "Usuário não existe!"})
     })
 
     it('Email inválido é inserido', async () => {

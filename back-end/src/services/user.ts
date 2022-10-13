@@ -26,15 +26,20 @@ export default class UsersService {
   static async create(user: Users) {
     const hash = bcrypt.hashSync(user.password, 10)
 
-    const { id } = await Users.create({
+    const createdUser = await Users.create({
       name: user.name,
       email: user.email,
       password: hash
     })
 
-    const token = generateJWT(id, user.email, user.name)
+    const token = generateJWT(createdUser.id, user.email, user.name)
 
-    return token
+    return {
+      token,
+      id: createdUser.id,
+      name: createdUser.name,
+      email: createdUser.email
+    }
   }
 
   static async login(user: Users) {

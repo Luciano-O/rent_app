@@ -26,6 +26,7 @@ Users.init({
   },
   email: {
     type: STRING(30),
+    unique: true,
     allowNull: false,
   },
   password: {

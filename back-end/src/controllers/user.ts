@@ -12,9 +12,9 @@ export default class UsersController {
 
   async create(req: Request, res: Response) {
     const user = req.body;
-    const token = await UsersService.create(user)
+    const data = await UsersService.create(user)
 
-    res.status(StatusCodes.CREATED).json({token})
+    res.status(StatusCodes.CREATED).json(data)
   }
 
   async login(req: Request, res: Response) {
