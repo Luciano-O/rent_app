@@ -30,7 +30,8 @@ export default function Cart() {
 
   useEffect(() => {
     const setDisable = () => {
-      if(cart && userId) setDisabled(false)
+      if(cart.length > 0 && userId) setDisabled(false)
+      else {setDisabled(true)}
     }
     setDisable();
   }, [userId])
