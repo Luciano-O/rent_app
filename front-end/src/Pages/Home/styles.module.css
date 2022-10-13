@@ -1,0 +1,10 @@
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.productCard {
+  margin: 2rem;
+}
