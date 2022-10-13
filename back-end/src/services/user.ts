@@ -48,7 +48,12 @@ export default class UsersService {
 
     const token = generateJWT(atualUser.id, atualUser.email, atualUser.name)
 
-    return token
+    return {
+      token,
+      id: atualUser.id,
+      name: atualUser.name,
+      email: atualUser.email
+    }
   }
 }
 

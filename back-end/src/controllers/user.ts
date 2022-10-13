@@ -19,8 +19,8 @@ export default class UsersController {
 
   async login(req: Request, res: Response) {
     const user = req.body;
-    const token = await UsersService.login(user)
+    const data = await UsersService.login(user)
 
-    res.status(StatusCodes.OK).json({token})
+    res.status(StatusCodes.OK).json(data)
   }
 }
