@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import styles from './styles.module.css';
 import genericReq from "../../Utils/Reqs";
 import Header from "../../Components/Header/Header";
+import { saveItem } from "../../Utils/LocalStorage";
 
 export default function Home() {
   const [products, setProducts] = useState([])
@@ -31,11 +32,26 @@ export default function Home() {
                 {item.description}
               </Card.Text>
               <Card.Text>R${item.price.toFixed(2)}</Card.Text>
-              <Button variant="primary">Adicionar ao carrinho</Button>
+              <Button 
+                variant="primary"
+                onClick={() => saveItem(item)}
+              >
+                Adicionar ao carrinho
+              </Button>
             </Card.Body>
           </Card>
         ))}
       </main>
+      <button 
+        type="button"
+        className={styles.cartButton}
+      >
+        <img 
+          src="https://img.icons8.com/material-outlined/344/shopping-cart--v1.png" 
+          alt="cart icon"
+          className={styles.cartIcon}
+        />
+      </button>
     </div>
   )
 }
