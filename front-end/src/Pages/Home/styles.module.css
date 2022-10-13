@@ -21,3 +21,8 @@ main {
   border-radius: 100%;
   padding: 1rem;
 }
+
+.order {
+  width: 10rem;
+  margin: 1rem auto;
+}
