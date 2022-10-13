@@ -61,3 +61,5 @@ export const newRent = {
   productId: 1,
   months: 4
 }
+
+export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsIm5hbWUiOiJBZG1pbiJ9LCJpYXQiOjE2NjU2NzQyNDB9.vIGZk4ECpQlhXj1eAUb32gbdrYN59Ygu6LFndjljdRo"

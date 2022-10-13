@@ -15,7 +15,6 @@ export const formatProducts = (products: IProduct[]) => {
 
 export const generateJWT = (id: number, email: string, name: string) => {
   const jwtConfig: SignOptions = {
-    expiresIn: '7d',
     algorithm: 'HS256',
   };
 

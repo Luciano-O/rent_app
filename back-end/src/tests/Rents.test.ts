@@ -3,7 +3,7 @@ import * as chai from 'chai';
 // @ts-ignore
 import chaiHttp = require('chai-http');
 import { StatusCodes } from 'http-status-codes';
-import { newRent, products } from './Mocks';
+import { newRent, products, token } from './Mocks';
 import { app } from '../app';
 import Rents from '../database/models/rents'
 
@@ -27,6 +27,7 @@ describe('Testes da rota /rents', () => {
       const { status } = await chai.request(app)
         .post('/rent')
         .send(newRent)
+        .set('Authorization', `Bearer ${token}`)
 
       expect(status).to.be.equal(StatusCodes.CREATED)
     })
