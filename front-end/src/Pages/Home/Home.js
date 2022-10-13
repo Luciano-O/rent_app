@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button, Dropdown, DropdownButton } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import styles from './styles.module.css';
 import genericReq from "../../Utils/Reqs";
@@ -7,6 +8,7 @@ import Header from "../../Components/Header/Header";
 import { saveItem } from "../../Utils/LocalStorage";
 
 export default function Home() {
+  const history = useHistory()
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState('')
   const [order, setOrder] = useState('')
@@ -94,6 +96,7 @@ export default function Home() {
       <button 
         type="button"
         className={styles.cartButton}
+        onClick={() => history.push('/cart')}
       >
         <img 
           src="https://img.icons8.com/material-outlined/344/shopping-cart--v1.png" 
