@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import styles from './styles.module.css';
-import { getLocalStorage } from "../../Utils/LocalStorage";
+import { getLocalStorage, saveLocalStorage } from "../../Utils/LocalStorage";
 import Header from "../../Components/Header/Header";
 import genericReq from "../../Utils/Reqs";
 
@@ -39,7 +39,7 @@ export default function Cart() {
     cart.forEach(async (item) => {
       await genericReq('POST', 'rent', {userId: user.id, productId: item.id, months: 12}, user.token)
     })
-
+    saveLocalStorage('cart', [])
     history.push('/')
   }
 

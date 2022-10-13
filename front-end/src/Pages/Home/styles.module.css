@@ -26,3 +26,7 @@ main {
   width: 10rem;
   margin: 1rem auto;
 }
+
+.imgProduct {
+  cursor: pointer;
+}

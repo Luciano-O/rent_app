@@ -32,7 +32,7 @@ export default function Header() {
         >
         Log in
       </Button>}
-      <h1>Aluguéis</h1>
+      <Link to='/'><h1>Aluguéis</h1></Link>
       {
         logged
         ? <Button

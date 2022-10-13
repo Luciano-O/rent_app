@@ -9,7 +9,7 @@ export default function ProductCard(props) {
     image
   } = props
   return (
-    <div className={styles.card}>
+    <div className={styles.cardDetail}>
       <img src={image} alt={name} />
       <h3>{name}</h3>
       <p>R${(Number(price)).toFixed(2)}</p>

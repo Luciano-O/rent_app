@@ -76,7 +76,12 @@ export default function Home() {
       <main>
         {displayProducts.map((item) => (
           <Card style={{ width: '18rem' }} key={item.id} className={styles.productCard}>
-            <Card.Img variant="top" src={item.image}/>
+            <Card.Img 
+              onClick={() => history.push(`/detalhes/${item.id}`)} 
+              variant="top" 
+              src={item.image}
+              className={styles.imgProduct}
+            />
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>
               <Card.Text>

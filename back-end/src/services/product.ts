@@ -6,6 +6,12 @@ class ProductsService {
 
     return products
   }
+
+  static async getById(id: number) {
+    const product = await Products.findByPk(id)
+
+    return product
+  }
 }
 
 export default ProductsService;

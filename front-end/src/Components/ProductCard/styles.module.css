@@ -2,7 +2,7 @@ img {
   width: 8rem;
 }
 
-.card {
+.cardDetail {
   width: 10rem;
   display: flex;
   flex-direction: column;

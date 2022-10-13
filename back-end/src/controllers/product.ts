@@ -8,6 +8,13 @@ class ProductsController {
 
     res.status(StatusCodes.OK).json(products)
   }
+
+  async getById(req: Request, res: Response) {
+    const { id } = req.params
+    const product = await ProductsService.getById(Number(id))
+
+    res.status(StatusCodes.OK).json(product)
+  }
 }
 
 export default ProductsController;

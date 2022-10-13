@@ -59,4 +59,20 @@ const products = new ProductsController();
  */
 productsRouter.get('/products', products.getAll);
 
+/**
+ * @swagger
+ *  /products/{id}:
+ *    get:
+ *      tags: [Products]
+ *      description: Enpoint que retorna um produto com base em seu id
+ *      responses:
+ *        200:
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                $ref: '#/components/schemas/Products'
+ */
+productsRouter.get('/products/:id', products.getById);
+
 export default productsRouter;
