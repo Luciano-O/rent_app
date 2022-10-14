@@ -52,7 +52,7 @@ Você necessita do seguinte requisito prévio para que o projeto rode corretamen
 Para executar esse projeto, você precisa apenas do Docker e docker-compose instalado no seu computador, caso ja tenha eles instalados,
 realize o passo abaixo para rodar a aplicação.
 
-1. Execute o build da api
+1. Suba o docker-compose utilizando o comando abaixo no terminar enquanto esteja no diretorio raiz da aplicação.
     + `docker-compose up -d --build `
 
 Pronto, feito isso, todas as partes da aplicação ja devem estar rodando corretamente, sendo elas, o back-end em http://localhost:3001,
