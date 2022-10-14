@@ -42,7 +42,7 @@ realizando login através da rota /login, como descrito na documentação.
 
 ### Requisitos
 
-Você necessita do seguinte requisito prévio para que o projeto rode corretamente na sua maquina.
+Você necessita dos seguintes requisitos prévios para que o projeto rode corretamente na sua maquina.
 
 1. Docker
 2. Docker-compose
